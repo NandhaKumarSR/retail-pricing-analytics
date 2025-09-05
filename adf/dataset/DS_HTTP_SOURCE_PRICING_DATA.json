@@ -1,0 +1,22 @@
+{
+	"name": "DS_HTTP_SOURCE_PRICING_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_HTTP_SOURCE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/labs/lab1/PW_MW_DR_01012023.csv "
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

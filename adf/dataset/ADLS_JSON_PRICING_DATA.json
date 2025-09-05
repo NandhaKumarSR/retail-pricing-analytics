@@ -1,0 +1,18 @@
+{
+	"name": "ADLS_JSON_PRICING_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_LANDING",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "landing"
+			}
+		},
+		"schema": {}
+	}
+}
