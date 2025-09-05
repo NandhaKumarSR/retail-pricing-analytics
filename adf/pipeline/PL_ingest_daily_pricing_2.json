@@ -1,5 +1,5 @@
 {
-	"name": "PL_ingest_daily_pricing",
+	"name": "PL_ingest_daily_pricing_2",
 	"properties": {
 		"activities": [
 			{
@@ -16,45 +16,35 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "JsonSource",
 						"storeSettings": {
 							"type": "HttpReadSettings",
 							"requestMethod": "GET"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "JsonSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_HTTP_SOURCE_PRICING_DATA",
+						"referenceName": "DS_HTTP_JSON_SOURCE_PRICING_DATA",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_ADLS_DAILY_PRICING_DATA",
+						"referenceName": "ADLS_JSON_PRICING_DATA",
 						"type": "DatasetReference"
 					}
 				]

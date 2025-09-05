@@ -1,0 +1,18 @@
+{
+	"name": "DS_HTTP_JSON_SOURCE_PRICING_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_HTTP_SOURCE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/labs/lab2/PW_MW_DR_01012023.json"
+			}
+		},
+		"schema": {}
+	}
+}
